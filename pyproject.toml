@@ -21,6 +21,7 @@ Issues = "https://github.com/tkarabela/miscreaders/issues"
 dev = [
     "mypy~=1.15",
     "pytest~=8.3",
+    "pytest-cov~=6.1",
     "pytest-datadir~=1.6",
     "ruff~=0.11",
     "sybil[pytest]~=9.1.0",
