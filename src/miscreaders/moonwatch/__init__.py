@@ -8,7 +8,7 @@ Moonwatch.rs
 
 .. invisible-code-block: python
 
-    path_to_jsonl = "tests/test_moonwatch/test.jsonl"
+    path_to_jsonl = "tests/test_moonwatch/test1.jsonl"
     path_to_dir = "tests/test_moonwatch"
 
 """
