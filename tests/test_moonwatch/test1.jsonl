@@ -1,0 +1,5 @@
+{"type":"ActiveWindowEvent","time":"2025-04-02T21:40:24.543149300+00:00","duration":15,"hostname":"test-hostname","username":"test-user","idle_for":82,"process_path":"C:\\test-program.exe","tags":[]}
+{"type":"ActiveWindowEvent","time":"2025-04-02T00:20:12.326975300+00:00","duration":15,"hostname":"test-hostname","username":"test-user","idle_for":218,"process_path":"C:\\other-program.exe","tags":["tag-a"]}
+{"type":"ActiveWindowEvent","time":"2025-04-02T00:19:57.317296100+00:00","duration":15,"hostname":"test-hostname","username":"test-user","idle_for":203,"process_path":"C:\\test-program.exe","tags":[]}
+{"type":"ActiveWindowEvent","time":"2025-04-02T00:19:42.314747+00:00","duration":15,"hostname":"test-hostname","username":"test-user","idle_for":188,"process_path":"C:\\test-program.exe","tags":[]}
+{"type":"ActiveWindowEvent","time":"2025-04-02T00:19:27.306595900+00:00","duration":15,"hostname":"test-hostname","username":"test-user","idle_for":173,"process_path":"C:\\other-program.exe","tags":["tag-a", "tag-b"]}
