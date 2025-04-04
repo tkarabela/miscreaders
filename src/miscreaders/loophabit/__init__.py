@@ -108,6 +108,7 @@ class LoophabitDbReader:
             >>> from miscreaders.loophabit import LoophabitDbReader
             >>> reader = LoophabitDbReader(path_to_db)
             >>> reader.get_repetition_df()
+            shape: (10, 4)
             ┌──────┬────────────┬───────┬───────┐
             │ name ┆ timestamp  ┆ value ┆ notes │
             │ ---  ┆ ---        ┆ ---   ┆ ---   │
