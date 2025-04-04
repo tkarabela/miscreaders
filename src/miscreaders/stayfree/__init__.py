@@ -176,7 +176,19 @@ class StayfreeXlsReader:
 
     @staticmethod
     def parse_duration(text: str) -> timedelta:
-        """Convert ``"1h 10m 26s"`` into ``datetime.timedelta``"""
+        """
+        Convert ``"1h 10m 26s"`` into ``datetime.timedelta``
+
+        Example:
+            >>> from miscreaders.stayfree import StayfreeXlsReader
+            >>> print(StayfreeXlsReader.parse_duration("1h 10m 26s"))
+            1:10:26
+            >>> print(StayfreeXlsReader.parse_duration("10m"))
+            0:10:00
+            >>> print(StayfreeXlsReader.parse_duration("10h 26s"))
+            10:00:26
+
+        """
         m = re.fullmatch(r"((?P<h>\d+)h)? ?((?P<m>\d+)m)? ?((?P<s>\d+)s)?", text)
         assert m is not None
         d = m.groupdict()
