@@ -8,10 +8,11 @@ This library provides parsers for output of various programs.
 
 ## List of readers
 
-| Program                               | Description                                        |
-|---------------------------------------|----------------------------------------------------|
-| [StayFree](https://stayfreeapps.com/) | Device usage statistics (mobile, desktop, browser) |
-| [Moonwatch.rs](https://github.com/tkarabela/moonwatch-rs) | Privacy-focused device usage statistics (desktop) |
+| Program                                                   | Description                                        |
+|-----------------------------------------------------------|----------------------------------------------------|
+| [StayFree](https://stayfreeapps.com/)                     | Device usage statistics (mobile, desktop, browser) |
+| [Loop Habit Tracker](https://github.com/iSoron/uhabits)   | Habit tracker (Android)                            |
+| [Moonwatch.rs](https://github.com/tkarabela/moonwatch-rs) | Privacy-focused device usage statistics (desktop)  |
 
 ## Installation
 
