@@ -6,6 +6,8 @@
 
 This library provides parsers for output of various programs.
 
+To learn more, please [see the documentation](https://miscreaders.readthedocs.io).
+
 ## List of readers
 
 | Program                                                   | Description                                        |
