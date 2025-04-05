@@ -1,6 +1,5 @@
 [project]
 name = "miscreaders"
-version = "0.1.0"
 description = "Parsers for output of various programs"
 readme = "README.md"
 authors = [{name = "Tomas Karabela", email = "tkarabela@seznam.cz"}]
@@ -10,6 +9,20 @@ requires-python = ">=3.10"
 dependencies = [
     "polars~=1.26",
     "xlrd~=2.0",
+]
+dynamic = ["version"]
+keywords = ["Loop Habits Tracker", "StayFree", "Moonwatch.rs"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: File Formats",
+    "Typing :: Typed",
 ]
 
 [project.urls]
@@ -25,6 +38,18 @@ dev = [
     "pytest-datadir~=1.6",
     "ruff~=0.11",
     "sybil[pytest]~=9.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/miscreaders/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
 ]
 
 [tool.mypy]
