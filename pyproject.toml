@@ -30,6 +30,12 @@ Homepage = "https://github.com/tkarabela/miscreaders"
 Repository = "https://github.com/tkarabela/miscreaders.git"
 Issues = "https://github.com/tkarabela/miscreaders/issues"
 
+[project.optional-dependencies]
+docs = [
+    "sphinx~=8.1",
+    "sphinx-rtd-theme~=3.0",
+]
+
 [dependency-groups]
 dev = [
     "mypy~=1.15",
@@ -37,7 +43,7 @@ dev = [
     "pytest-cov~=6.1",
     "pytest-datadir~=1.6",
     "ruff~=0.11",
-    "sybil[pytest]~=9.1.0",
+    "sybil[pytest]~=9.1",
 ]
 
 [build-system]
@@ -49,7 +55,8 @@ path = "src/miscreaders/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 exclude = [
-  "/.github",
+    "/.github",
+    ".readthedocs.yaml",
 ]
 
 [tool.mypy]

@@ -2,11 +2,20 @@
 Loop Habit Tracker
 ==================
 
+Loop Habit Tracker is an open-source Android app for tracking habits.
+
+References:
+    - https://github.com/iSoron/uhabits
+    - https://play.google.com/store/apps/details?id=org.isoron.uhabits
+
 .. autoclass:: LoophabitDbReader
+    :members:
 
 .. autoclass:: HabitType
+    :members:
 
 .. autoclass:: EntryValue
+    :members:
 
 .. invisible-code-block: python
 
@@ -37,7 +46,7 @@ class EntryValue:
         UNKNOWN: Value indicating that no data is available for the given timestamp.
 
     References:
-        https://github.com/iSoron/uhabits/blob/897a2365015d21e64dae0a0a4d0b33e79c31cfda/uhabits-core/src/jvmMain/java/org/isoron/uhabits/core/models/Entry.kt#L26
+        - https://github.com/iSoron/uhabits/blob/897a2365015d21e64dae0a0a4d0b33e79c31cfda/uhabits-core/src/jvmMain/java/org/isoron/uhabits/core/models/Entry.kt#L26
     """
     SKIP = 3
     YES_MANUAL = 2
@@ -51,11 +60,11 @@ class HabitType:
     Values in column ``type`` in habit table
 
     Attributes:
-        YES_NO: Habit value has interpretation per `EntryValue`
+        YES_NO: Habit value has interpretation per :py:class:`EntryValue`
         NUMERICAL: Habit value has numerical interpretation
 
     References:
-        https://github.com/iSoron/uhabits/blob/897a2365015d21e64dae0a0a4d0b33e79c31cfda/uhabits-core/src/jvmMain/java/org/isoron/uhabits/core/models/HabitType.kt#L5
+        - https://github.com/iSoron/uhabits/blob/897a2365015d21e64dae0a0a4d0b33e79c31cfda/uhabits-core/src/jvmMain/java/org/isoron/uhabits/core/models/HabitType.kt#L5
     """
     YES_NO = 0
     NUMERICAL = 1
@@ -64,10 +73,6 @@ class HabitType:
 class LoophabitDbReader:
     """
     Reader for SQLite database exported from Loop Habit Tracker
-
-    References:
-        https://github.com/iSoron/uhabits
-        https://play.google.com/store/apps/details?id=org.isoron.uhabits
 
     """
     def __init__(self, db_path: PathOrStr) -> None:
@@ -80,6 +85,9 @@ class LoophabitDbReader:
     def get_habit_df(self) -> pl.DataFrame:
         """
         Return dataframe with habit definition
+
+        See Also:
+            :py:class:`HabitType` for meaning of the ``type`` column
 
         Example:
             >>> from miscreaders.loophabit import LoophabitDbReader
@@ -103,6 +111,9 @@ class LoophabitDbReader:
     def get_repetition_df(self) -> pl.DataFrame:
         """
         Return dataframe with daily data for habits
+
+        See Also:
+            :py:class:`EntryValue` for meaning of the ``value`` column
 
         Example:
             >>> from miscreaders.loophabit import LoophabitDbReader

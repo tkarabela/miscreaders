@@ -2,9 +2,17 @@
 Moonwatch.rs
 ============
 
+Moonwatch.rs is a privacy-oriented tool for tracking application usage
+on Windows and Linux.
+
+References:
+    - https://github.com/tkarabela/moonwatch-rs
+
 .. autoclass:: MoonwatchLogReader
+    :members:
 
 .. autoclass:: MoonwatchLogDirectoryReader
+    :members:
 
 .. invisible-code-block: python
 
@@ -25,9 +33,6 @@ from ..common import PathOrStr
 class MoonwatchLogReader:
     """
     Reader for Moonwatch.rs log file
-
-    References:
-        https://github.com/tkarabela/moonwatch-rs
 
     """
     def __init__(self, jsonl_path: PathOrStr) -> None:
@@ -101,7 +106,7 @@ class MoonwatchLogDirectoryReader:
     into one dataframe.
 
     See Also:
-        `MoonwatchLogReader`
+        :py:class:`MoonwatchLogReader`
 
     """
     def __init__(self, dir_path: PathOrStr) -> None:

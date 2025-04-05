@@ -1,8 +1,15 @@
 """
-Stayfree
+StayFree
 ========
 
+StayFree is a productivity app for mobile, desktop and web.
+
+References:
+    - https://stayfreeapps.com
+    - https://userguide.stayfreeapps.com/settings/backup-restore
+
 .. autoclass:: StayfreeXlsReader
+    :members:
 
 .. invisible-code-block: python
 
@@ -23,10 +30,6 @@ from ..common import PathOrStr
 class StayfreeXlsReader:
     """
     Reader for StayFree XLS export file
-
-    References:
-        https://stayfreeapps.com
-        https://userguide.stayfreeapps.com/settings/backup-restore
 
     """
     def __init__(self, xls_path: PathOrStr) -> None:

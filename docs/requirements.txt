@@ -1,0 +1,7 @@
+# docs dependencies
+sphinx~=8.1
+sphinx-rtd-theme~=3.0
+
+# project dependencies
+polars~=1.26
+xlrd~=2.0
