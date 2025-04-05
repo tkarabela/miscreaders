@@ -22,7 +22,7 @@ To learn more, please [see the documentation](https://miscreaders.readthedocs.io
 ## Installation
 
 ```bash
-uv pip install "git+https://github.com/tkarabela/miscreaders"
+pip install miscreaders
 ```
 
 ## Example

@@ -22,7 +22,7 @@ Installation
 
 .. code-block:: bash
 
-   uv pip install "git+https://github.com/tkarabela/miscreaders"
+   pip install miscreaders
 
 Example
 -------
