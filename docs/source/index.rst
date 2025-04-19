@@ -16,6 +16,7 @@ This library is a collection of parsers for various tools. It can read data from
    :caption: API reference
 
    api-reference
+   release-notes
 
 Installation
 ------------

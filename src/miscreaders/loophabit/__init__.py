@@ -8,6 +8,9 @@ References:
     - https://github.com/iSoron/uhabits
     - https://play.google.com/store/apps/details?id=org.isoron.uhabits
 
+Note:
+    Tested with version 2.2.1 of Loop Habit Tracker.
+
 .. autoclass:: LoophabitDbReader
     :members:
 

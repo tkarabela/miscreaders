@@ -8,6 +8,9 @@ on Windows and Linux.
 References:
     - https://github.com/tkarabela/moonwatch-rs
 
+Note:
+    Tested with version 0.1.0 of Moonwatch.rs.
+
 .. autoclass:: MoonwatchLogReader
     :members:
 
