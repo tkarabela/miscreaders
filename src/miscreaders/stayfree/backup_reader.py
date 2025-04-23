@@ -24,10 +24,6 @@ class StayfreeBackupReader:
     (other than deleting them) for the user; it is only meant to be accessed by the app.
     For a slightly cursed way of getting access, see https://github.com/albertored/google-drive-app-data.
 
-    Note:
-        This class reports app names as eg. ``"com.google.android.youtube"``
-        instead of ``"YouTube"`` that is reported by :py:class:`StayfreeXlsReader`.
-
     See Also:
         :py:class:`StayfreeXlsReader` for reader of the official file export format.
 
@@ -39,9 +35,13 @@ class StayfreeBackupReader:
         """
         self.path = Path(backup_path)
 
-    def get_usage_time_df(self) -> pl.DataFrame:
+    def get_usage_time_df(self, lookup_app_name: bool = True) -> pl.DataFrame:
         """
         Return dataframe with app usage time
+
+        Args:
+            lookup_app_name: Translate package names (eg. ``"com.google.android.youtube"``)
+                into human-readable app names (eg. ``"YouTube"``).
 
         .. skip: start
 
@@ -74,12 +74,25 @@ class StayfreeBackupReader:
         with self.get_connection("usage_stats_event") as con:
             return (
                 pl.read_database(
-                    "SELECT TIMESTAMP, PACKAGE_NAME, TOTAL_USAGE_TIME FROM DailyUsageStatsEntity",
+                    """
+                    SELECT
+                        a.TIMESTAMP as timestamp,
+                        a.PACKAGE_NAME as package_name,
+                        a.TOTAL_USAGE_TIME as total_usage_time,
+                        b.APP_NAME as app_name
+                    FROM
+                        DailyUsageStatsEntity a
+                        LEFT JOIN AppInfoEntity b ON a.PACKAGE_NAME = b.PACKAGE_NAME
+                    """,
                     con
                 ).select(
-                    pl.from_epoch("TIMESTAMP", "ms").cast(pt.Date).alias("date"),
-                    pl.col("PACKAGE_NAME").alias("app"),
-                    pl.duration(milliseconds="TOTAL_USAGE_TIME").alias("duration"),
+                    pl.from_epoch("timestamp", "ms").cast(pt.Date).alias("date"),
+                    (
+                        pl.col("app_name").fill_null(pl.col("package_name")).alias("app")
+                        if lookup_app_name
+                        else pl.col("package_name").alias("app")
+                    ),
+                    pl.duration(milliseconds="total_usage_time").alias("duration"),
                 )
             )
 
